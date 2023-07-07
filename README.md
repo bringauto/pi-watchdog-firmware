@@ -4,7 +4,9 @@ BringAuto Pi is a device which turns Raspberry Pi into real industrial-grade com
 
 This repository contains source files for a BringAuto Pi Watchdog firmware.
 
-BringAuto Pi Documentation: https://doc.bringauto.com/
+BringAuto Pi Documentation: https://doc.bringauto.com/bringauto-pi
+
+## Build instructions
 
 ## Installing Arduino IDE 2
 
@@ -23,7 +25,7 @@ If not add it using - after it log out
 sudo usermode -a -G dialout $USER
 ``
 
-Download Arduino IDE
+Download Arduino IDE 2
 https://www.arduino.cc/en/software - Linux AppImage
 
 Install libfuse2
@@ -33,20 +35,16 @@ sudo add-apt-repository universe
 sudo apt update
 sudo apt install libfuse2
 ``
-
-From Downloads:Install downloaded AppImageLauncher
-Install downloaded Arduino IDE
   
 - First run > OK
-- Desktop integration > Integrate and run
 
-Wait for auto-install packages for Arduino IDE
+Wait for auto-install packages for Arduino IDE 2
 
 Arduino temporary project is under arduino_wd > arduino_wd.ino
 
 ## Pico board setup
 
-Add Pico board definition into Arduino IDE (File > Preferences > Additional board manager URLs)
+Add Pico board definition into Arduino IDE 2 (File > Preferences > Additional board manager URLs)
 
 URL: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
 
@@ -59,11 +57,11 @@ After connecting Pico to the computer select port and board (under Tools)
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-## Hardware
+## Hardware wire-out
 
 It's designed to be used with [BringAuto Pi Watchdog PCBs](https://doc.bringauto.com/) and Raspberry Pi Pico.
 
-- On pin 22 is Enable pin for watchdog  - ON when connected to 5V , OFF when connected to GND
+- On pin 22 is Enable pin for watchdog - ON when connected to 5V , OFF when connected to GND
 - Pin 20 is Master pin for sending ping to Slave.
 - Pin 21 is for Slave response (value mimicking)
 
@@ -86,16 +84,16 @@ Watchdogs state is signalized via build-in LED:
 
 Important variables are stored in [Config.h](arduino_wd/Config.h).
 
-## Build and upload
+## Upload
 
-**
 > ## WARNING
 > Never connect RPi Pico to PC when plugged in board - It must be turned OFF and removed from board
-**
 
 - Build sketch by standard verify Arduino IDE button.
 - Connect Watchdog board by a micro-usb cable to the computer. DO NOT forget to disconnect it from the power source!
 - Flash the device by Arduino IDE flash button.
+
+Also the Arduino IDE produces uf2 file that can be used to program Pi Pico in a standard way by Pi Pico USB Drive mode
 
 ## License
 
