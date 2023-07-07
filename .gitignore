@@ -1,0 +1,7 @@
+build/
+_build/
+lib/
+.vscode/
+*.uf2
+*/__pycache__/
+.idea
