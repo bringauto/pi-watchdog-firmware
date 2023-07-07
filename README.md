@@ -4,7 +4,12 @@ BringAuto Pi is a device which turns Raspberry Pi into real industrial-grade com
 
 This repository contains source files for a BringAuto Pi Watchdog firmware.
 
-BringAuto Pi Documentation: https://doc.bringauto.com/bringauto-pi
+The firmware guards device to operate without issues:
+
+- it measures temperature and voltage to reacts and regulate inner environment,
+- it provides HW Watchdog functionality
+
+Complete BringAuto Pi Documentation: https://doc.bringauto.com/bringauto-pi
 
 ## Build instructions
 
