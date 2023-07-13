@@ -9,6 +9,8 @@ extern "C" {
 #include <hardware/watchdog.h>
 };
 
+#define ENABLE_DEBUG_PRINT false
+
 /**
  * Watchdog
  */
@@ -50,7 +52,10 @@ void loop() {
 void setup1() {
 	pwmController.init(pwmSettings);
 
+#if ENABLE_DEBUG_PRINT
 	Serial.begin(9600);
+#endif
+
 }
 
 void loop1() {
